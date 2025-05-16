@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #c41b2d;
+    /* Added to center the container vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+.login-container { /* Changed class name to login-container */
+    padding: 50px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Added Flexbox properties to align children */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    gap: 20px; /* Add space between flex items */
+    font-weight: bold;
+}
+h2 {
+    text-align: center;
+    color: #5b0104;
+    
+}
+/* Styles for input fields */
+.login-container input[type="text"],
+.login-container input[type="password"] { /* Changed class name */
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%; /* Make inputs take full width of container (minus padding) */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+/* Styles for Remember Me checkbox container */
+.login-container .remember-me { /* Changed class name */
+    width: 100%; /* Ensure it aligns with other elements */
+    text-align: left; /* Align text to the left */
+}
+
+button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none; /* Remove default button border */
+    background-color: #c41b2d; /* Example button color */
+    color: white; /* Example text color */
+    cursor: pointer; /* Indicate it's clickable */
+    width: 100%; /* Make button take full width */
+    box-sizing: border-box;
+    margin-top: 10px; /* Add space above the button */
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+button:hover {
+    background-color: #b61221; /* Change button color on hover */
+}
+p{
+    text-align: center;
+    /* margin-right: 10px; Removed as it might cause misalignment */
+}
+
+/* Style for the link inside the paragraph */
+.login-container p a { /* Changed class name */
+    color: inherit; /* Inherit color from the parent paragraph */
+    text-decoration: none; /* Remove underline */
+}
+.login-container p a:hover { /* Changed class name */
+    text-decoration: underline; /* Remove underline */
+}

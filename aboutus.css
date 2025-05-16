@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c41b2d;
+  color: white;
+}
+
+p {
+  font-size: 24px;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-title h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.icon {
+  width: 40px;
+  height: auto;
+}
+
+/* Enlarge only the SDG icon */
+.sdg-icon .icon {
+  width: 150px;
+  height: 150px;
+}
+
+.sdg-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.sdg-text {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.sdg-number {
+  font-size: 24px;
+  display: block;
+}
+
+.sdg-label {
+  font-size: 12px;
+  display: block;
+  letter-spacing: 0.5px;
+}
+
+/* ==== ADJUSTED STYLES BELOW ==== */
+
+main {
+  margin-top: -20px; /* Ito ang nagpapataas sa buong main content */
+}
+
+main h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-top: 5px; /* Mas maliit na margin */
+  margin-bottom: 10px;
+}
+
+main p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  margin-top: 0; /* Wala nang top margin para umakyat */
+}
+
+.sdg-description strong {
+  font-weight: bold;
+}
+
+.sdg-description a {
+  color: #a2c4f9;
+  text-decoration: underline;
+}
+
+.back-arrow {
+  font-size: 50px;
+  color: maroon;
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  text-decoration: none;
+}

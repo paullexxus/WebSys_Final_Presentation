@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #c41b2d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 20px;
+  
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px; /* Increased font size for the headers */
+  font-weight: bold;
+  color: #ffffff;
+}
+
+a:hover {
+  background-color: #c41b2d;
+  color: #FFFFFF;
+}
+
+.back-arrow {
+  font-size: 50px;
+  color: maroon;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  text-decoration: none;
+}
+
+.calendar-container {
+  width: 100%;
+  max-width: 1400px; /* Larger max-width for a bigger calendar */
+  text-align: center;
+  margin-top: 50px; /* Space from the top */
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* More space between elements */
+  margin-bottom: 40px; /* More space between header and grid */
+}
+
+.calendar-header h1 {
+  font-size: 72px; /* Increased font size for the calendar title */
+  font-weight: bold;
+}
+
+.icons {
+  width: 120px; /* Larger icons */
+  height: auto;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px; /* Increased gap between grid items */
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.day {
+  font-weight: bold;
+  text-align: center;
+  background-color: #cce5ff;
+  padding: 20px; /* Increased padding for better appearance */
+  border-radius: 10px; /* Larger border-radius for rounded corners */
+  font-size: 28px; /* Larger font size for day names */
+}
+
+.cell {
+  background-color: #f2f2f2;
+  padding: 30px; /* Increased padding for better spacing */
+  text-align: center;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.cell a {
+  text-decoration: none;
+  color: #333;
+  font-size: 32px; /* Larger font size for the dates */
+  font-weight: bold;
+}
+
+.cell.empty {
+  background-color: transparent;
+}
+
+.month-link {
+  display: inline-block;
+  width: 30%; /* Increased width for more prominent buttons */
+  text-align: center;
+  margin: 20px;
+  padding: 40px; /* More padding for larger buttons */
+  background-color: #e0f7fa;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 15px; /* Larger border-radius for the month buttons */
+  color: #000;
+  font-size: 36px; /* Much larger font size for the month names */
+  transition: background 0.3s, color 0.3s;
+}
+
+.month-link:hover {
+   background-color: #f3374a;
+  color: #FFFFFF;
+}
+
+.month-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 40px; /* More space from the content */
+  color: #007BFF;
+  text-decoration: none;
+  font-size: 28px; /* Larger font size for back link */
+}
+
+.month {
+  padding: 40px; /* Much larger padding for clickable area */
+  border: 2px solid black;
+  font-size: 40px; /* Larger font size for month buttons */
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+.month:hover {
+  background-color: #000000;
+  color: #ffffff;
+}

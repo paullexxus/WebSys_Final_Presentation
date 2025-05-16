@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial Black', sans-serif;
+  background-color: #c8102e;
+  color: white;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+  margin-top: -25px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  font-style: italic;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+nav a.active {
+  color: #f4e06d;
+}
+
+main {
+  text-align: center;
+}
+
+h2 {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.left, .right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.left-box,
+.right-box {
+  background-color: #96141f;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+  border: 1px solid #96141f;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.right-box {
+  font-family: "Anton", sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.cta-button {
+  text-align: left;
+}
+
+.cta-button button {
+  background-color: #f25022;
+  color: white;
+  font-weight: bold;
+  padding: 15px 30px;
+  border: 2px solid black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button button:hover {
+  background-color: #d93b1b;
+}
+
+/* ===== MEDIA QUERIES FOR RESPONSIVENESS ===== */
+
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 60px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .right-box {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  h2 {
+    font-size: 50px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .right-box {
+    font-size: 20px;
+  }
+
+  .cta-button button {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .left-box,
+  .right-box {
+    font-size: 14px;
+  }
+
+  .right-box {
+    font-size: 18px;
+  }
+
+  .cta-button button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}

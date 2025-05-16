@@ -1,0 +1,391 @@
+/* Base styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  overflow-x: hidden; /* prevent horizontal scroll on body */
+}
+
+/* App container and layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100vw; /* limit width to viewport */
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+.main-content {
+  display: flex;
+  padding: 5px;
+  gap: 15px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Calendar View */
+.calendar-view {
+  flex-grow: 1;
+  min-width: 0; /* allow shrinking */
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  min-height: 600px;
+  border: 2px solid black; /* black border */
+}
+
+.calendar-view h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #E5243B; /* SDG4 red heading */
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black; /* black line */
+  color: #555;
+}
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.calendar-header h2 {
+  font-size: 2rem;
+  color: #E5243B; /* SDG4 red */
+  margin: 0;
+  min-width: 180px;
+  text-align: center;
+}
+
+.nav-btn {
+  background-color: #E5243B; /* SDG4 Red */
+  color: white;
+  border: 2px solid black;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #a31522; /* darker red on hover */
+}
+
+.nav-btn:disabled {
+  background-color: #ddd;
+  color: #999;
+  border-color: #aaa;
+  cursor: not-allowed;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Add black border and red hover background to date cells */
+.date-cell {
+  padding: 10px;
+  background: #f9e6e8; /* light red background */
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  font-size: 3.5rem;
+  border: 2px solid black; /* black border */
+  color: #000; /* black text */
+}
+
+.date-cell:hover {
+  background: #E5243B; /* SDG4 red on hover */
+  border-color: black;
+  color: white;
+}
+
+.date-cell.event::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 10px;
+  height: 10px;
+  background: #7a0a17; /* darker red */
+  border-radius: 50%;
+  border: 1.5px solid white;
+}
+
+/* Empty calendar cells */
+.empty {
+  background: transparent;
+  pointer-events: none;
+}
+
+/* Sidebar */
+.sidebar {
+  flex-shrink: 1; /* allow shrinking */
+  min-width: 280px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  border: 2px solid black; /* black border */
+  border-radius: 10px;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar-section {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  height: 45vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  border: 1.5px solid #f5c6c7; /* lighter red border */
+}
+
+.sidebar-section h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  border-bottom: 2px solid #E5243B; /* SDG4 red */
+  padding-bottom: 5px;
+  color: #E5243B;
+}
+
+/* TO DO List */
+.todo-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.todo-list li {
+  padding: 5px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Events List */
+.events-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.events-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.events-list li span {
+  flex-grow: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.events-list li button {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.events-list li button:nth-child(2) {
+  background-color: #E5243B; /* SDG4 red variant */
+  color: white;
+}
+
+.events-list li button:nth-child(3) {
+  background-color: #dc3545;
+  color: white;
+}
+
+.add-item-btn, .save-btn, .save-event-btn {
+  background: #E5243B; /* SDG4 Red */
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.add-item-btn:hover, .save-btn:hover, .save-event-btn:hover {
+  background: #a31522; /* darker red on hover */
+}
+
+.editable-list {
+  margin: 0;
+  padding-left: 0;
+}
+
+.editable-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.editable-list li input[type="text"] {
+  flex-grow: 1;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.editable-list li button {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.editable-list li button:hover {
+  background-color: #a71d2a;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  border: 2px solid black; /* black border */
+}
+
+.add-event-modal-content {
+  max-width: 600px;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #E5243B;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="time"],
+.modal-content textarea,
+.modal-content input[type="file"] {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.modal-content textarea {
+  min-height: 80px;
+  max-height: 150px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 18px;
+  top: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Back to Calendar button */
+#backToCalendarBtn {
+  margin-bottom: 15px;
+  background: #6c757d;
+  border: 2px solid black;
+  color: white;
+}
+
+#backToCalendarBtn:hover {
+  background: #5a6268;
+}
+
+/* Past date styling */
+.date-cell.past {
+  cursor: not-allowed;
+  pointer-events: none;
+  /* No color or background change here */
+}
